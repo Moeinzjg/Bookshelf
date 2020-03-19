@@ -127,3 +127,6 @@ dmypy.json
 
 # virtual environment
 .venv/*
+
+# settings.py
+shelf/settings.py
