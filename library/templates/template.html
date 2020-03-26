@@ -43,21 +43,19 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="http://todoer.ir">
+                    <a class="navbar-brand" href="http://myreads.ir">
                        <!-- To add your logo uncommeny and channge below line -->
-                        <!-- <img src="/static/todoer.png" > -->
+                        <!-- <img src="/static/myreads.png" > -->
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-left">
                     {% if user.is_authenticated %}
-                    <!--<li><a href="/static/todoer_release.apk">اپ اندروید</a></li>-->
                     <li><a href="/accounts/logout">خروج</a></li>
                     {% else %}
                     <li><a href="/accounts/login">ورود</a></li>
                     <li><a href="/accounts/register">ثبت نام</a></li>
-                    <!--<li><a href="/static/todoer_release.apk">اپ اندروید</a></li>-->
                     {% endif %}
                   </ul>
                 </div>
@@ -83,13 +81,8 @@
 
               <p>
                 <strong>قفسه</strong> یک پروژهٔ آزاد و متن‌باز است.<br>
-			<a href="https://github.com/jadijadi/todoer">مخزن گیت‌هاب پروژه</a> |
-			<a href="http://gapper.ir/channel/todoer">گزارش مشکلات و پیشنهادها</a>
-              </p>
-              <p>
-                <a href="/static/todoer_release.apk">
-                  دریافت اپ اندروید قفسه
-                </a>
+			<a href="https://github.com/moeinzjg/bookshelf">مخزن گیت‌هاب پروژه</a> |
+			<!-- <a href="http://gapper.ir/channel/bookshelf">گزارش مشکلات و پیشنهادها</a>  -->
             </div>
           </div>
         </footer>

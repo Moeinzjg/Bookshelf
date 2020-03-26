@@ -91,6 +91,11 @@ def register(request):
         return render(request, 'register.html', context)
 
 
+def index(request):
+    context = {'message': ''}
+    return render(request, 'index.html', context)
+
+
 
 @csrf_exempt
 def submit_BooksRead(request):
