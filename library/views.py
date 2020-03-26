@@ -63,7 +63,7 @@ def register(request):
                                  subject = "فعال سازی اکانت قفسه",
                                  sender = "moeinzjg@gmail.com",
                                  to = email,
-                                 text_body = "برای فعال سازی ایمیلی قفسه خود روی لینک روبرو کلیک کنید: http://ghafaseh.ir/accounts/register/?email={}&code={}".format(email, code),
+                                 text_body = "برای فعال سازی ایمیلی قفسه خود روی لینک روبرو کلیک کنید: {}?email={}&code={}".format(request.build_absolute_url('/accounts/register/'), email, code),
                                  tag = "account request")
                 message.send()
                 context = {'message': 'ایمیلی حاوی لینک فعال سازی اکانت به شما فرستاده شده، لطفا پس از چک کردن ایمیل، روی لینک کلیک کنید.'}
