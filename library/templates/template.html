@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{% static 'favicon.ico' %}">
 
-    <title>قفسه، کتابایی که خوندی و اونایی که میخوای بخونی</title>
+    <title>قفسه، چی خوندم و بخونم؟</title>
 
     <link rel="stylesheet" href="/static/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/bootstrap-rtl.css" crossorigin="anonymous">
@@ -54,7 +54,6 @@
                     {% if user.is_authenticated %}
                     <li><a href="/accounts/logout">خروج</a></li>
                     {% else %}
-                    <li><a href="/accounts/login">ورود</a></li>
                     <li><a href="/accounts/register">ثبت نام</a></li>
                     {% endif %}
                   </ul>
