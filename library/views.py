@@ -96,6 +96,21 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+@csrf_exempt
+def general_stat(request):
+    # TODO: should get a valid duration (from - to) if not use 1 month
+    # TODO: Add some stats including number of books read in the period
+    #       number of pages read, books from each author, 
+    #       the authors books of whom read, etc. also the diagrams
+    # TODO: is the token valid?
+    this_token = request.POST['token']
+    this_user = User.objects.filter(token__token = this_token).get()
+    num_read = BooksRead.objects.filter(user = this_user).count()
+    num_2read = Books2Read.objects.filter(user = this_user).count()
+    context = {}
+    context['num_booksread'] = num_read
+    context['num_books2read'] = num_2read 
+    return JsonResponse(context, encoder=DjangoJSONEncoder)
 
 @csrf_exempt
 def submit_BooksRead(request):
@@ -103,6 +118,7 @@ def submit_BooksRead(request):
 
     # TODO: validate data, title, author, etc. might be invalid or fake
     # TODO: some of the arguments might be missed or blank
+    # TODO: is the token valid?
     this_title = request.POST['title']
     this_author = request.POST['author']
     this_publisher = request.POST['publisher']
@@ -123,6 +139,7 @@ def submit_Books2Read(request):
 
     # TODO: validate data, title, author, etc. might be invalid or fake
     # TODO: some of the arguments might be missed or blank
+    # TODO: is the token valid?
     this_title = request.POST['title']
     this_author = request.POST['author']
     this_publisher = request.POST['publisher']
